@@ -4,8 +4,8 @@ a {
   font-family: 'Quicksand', sans-serif !important;
 }
 
-.background-color {
-  background-color: #E6E8E6;
+.background-img {
+  background-image: url("assets/images/grand_teton_bg.jpg");
 }
 
 .remove-bullets {
@@ -14,7 +14,7 @@ a {
 
 .clean-border {
   border-style: solid;
-  border-color: #FFFC31;
+  border-color: #4ECDC4;
 }
 
 .position {
