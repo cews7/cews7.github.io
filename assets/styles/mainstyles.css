@@ -16,3 +16,9 @@ a {
   border-style: solid;
   border-color: #FFFC31;
 }
+
+.position {
+  text-align: left;
+  margin-top: 200px;
+  font-size: 24px;
+}
