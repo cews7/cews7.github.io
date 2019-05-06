@@ -12,8 +12,14 @@ a {
   list-style-type: none;
 }
 
-.position {
+.info-position {
   text-align: left;
   margin-top: 200px;
   font-size: 24px;
+}
+
+.about-me-position {
+  text-align: center;
+  border: solid;
+  border-color: black;
 }
