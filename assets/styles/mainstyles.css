@@ -1,7 +1,18 @@
+a {
+  color: #1A535C;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif !important;
+}
+
 .background-color {
   background-color: #E6E8E6;
 }
 
-.text-color {
-  color: #1A535C;
+.remove-bullets {
+  list-style-type: none;
+}
+
+.clean-border {
+  border-style: solid;
+  border-color: #FFFC31;
 }
