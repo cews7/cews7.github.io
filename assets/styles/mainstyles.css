@@ -10,6 +10,10 @@ a {
 
 .gradient-background {
   background: linear-gradient(to bottom, #6699ff 0%, #000099 100%);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .remove-bullets {
@@ -29,7 +33,15 @@ a {
   flex-grow: 1;
 }
 
-.font {
+.hello-font {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 24px;
+}
+
+.projects {
+  text-align: center;
+}
+
+.projects:hover {
+  box-shadow: inset 0 0 0 25px #53a7ea;
 }
