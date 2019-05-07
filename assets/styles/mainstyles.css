@@ -4,28 +4,32 @@ a {
   font-family: 'Quicksand', sans-serif !important;
 }
 
-.background-img {
-  background-image: url("../images/grand_teton_bg.jpg");
-}
-
 .container {
   display: flex;
+}
+
+.gradient-background {
+  background: linear-gradient(to bottom, #6699ff 0%, #000099 100%);
 }
 
 .remove-bullets {
   list-style-type: none;
 }
 
-.info-position {
+.link-info {
   text-align: left;
   margin-top: 200px;
   font-size: 24px;
   width: 200px;
 }
 
-.about-me-position {
+.hello {
   text-align: center;
-  border: solid;
-  border-color: black;
+  opacity: 0.5;
   flex-grow: 1;
+}
+
+.font {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 24px;
 }
