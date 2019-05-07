@@ -4,6 +4,10 @@ a {
   font-family: 'Quicksand', sans-serif !important;
 }
 
+a:hover {
+  color: gray;
+}
+
 .container {
   display: flex;
 }
@@ -22,26 +26,23 @@ a {
 
 .link-info {
   text-align: left;
-  margin-top: 200px;
   font-size: 24px;
-  width: 200px;
 }
 
 .hello {
   text-align: center;
+  margin-top: 220px;
   opacity: 0.5;
   flex-grow: 1;
 }
 
 .hello-font {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 24px;
-}
-
-.projects {
-  text-align: center;
+  font-size: 48px;
 }
 
 .projects:hover {
-  box-shadow: inset 0 0 0 25px #53a7ea;
+  -webkit-transform: rotateZ(-30deg);
+  -ms-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg);
 }
