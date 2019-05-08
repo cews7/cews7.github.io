@@ -21,12 +21,24 @@
           <a href="https://www.linkedin.com/in/charleswahlgrensauro/" target="_blank">LinkedIn</a>
         </li>
         <li>
-          <a href="#">Projects</a>
+          <a onclick="scrollIt();">Projects</a>
         </li>
       </ul>
     </div>
     <div class="hello">
-      <p class="hello-font">Hi, I'm Eric</p>
+      <p id="name" class="hello-font"></p>
     </div>
+    <div class="projects-section">
+      <div class="container">
+        <div class="mini-market">
+          Mini-Market is my first project that uses React.
+        </div>
+        <div class="commute-tracker">
+          Commute Tracker is a Ruby on Rails application that taught me how to interact with the Google Maps API.
+          It also taught me how to setup up Google OAuth.
+        </div>
+      </div>
+    </div>
+    <script src="scripts/main.js"></script>
   </body>
 </html>

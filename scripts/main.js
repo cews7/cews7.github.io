@@ -1,7 +1,15 @@
-var string = "Hi, I'm Eric Wahlgren-Sauro";
-var str = string.split("");
-var el = document.getElementById('str');
+var string = "Hi, I'm Eric. I'm a full-stack developer."
+var el = document.getElementById('name');
+var split = string.split("");
 (function animate() {
-str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running);
-var running = setTimeout(animate, 90);
+split.length > 0 ? el.innerHTML += split.shift() : clearTimeout(running);
+var running = setTimeout(animate, 110);
 })();
+
+function scrollIt() {
+  window.scrollTo({
+    'behavior': 'smooth',
+    'left': 0,
+    'top': document.querySelector('.projects-section').offsetTop
+  });
+}

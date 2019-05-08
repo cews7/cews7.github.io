@@ -2,6 +2,7 @@ a {
   color: #E6E8E6;
   text-decoration: none;
   font-family: 'Quicksand', sans-serif !important;
+  cursor: pointer;
 }
 
 a:hover {
@@ -41,8 +42,17 @@ a:hover {
   font-size: 48px;
 }
 
-.projects:hover {
-  -webkit-transform: rotateZ(-30deg);
-  -ms-transform: rotateZ(-30deg);
-  transform: rotateZ(-30deg);
+.mini-market {
+  text-align: right;
+}
+
+.commute-tracker {
+  text-align: left;
+}
+
+.projects-section {
+  width: 100%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
 }
