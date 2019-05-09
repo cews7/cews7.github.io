@@ -6,10 +6,18 @@ split.length > 0 ? el.innerHTML += split.shift() : clearTimeout(running);
 var running = setTimeout(animate, 110);
 })();
 
-function scrollIt() {
+function scrollProjects() {
   window.scrollTo({
     'behavior': 'smooth',
     'left': 0,
     'top': document.querySelector('.projects-section').offsetTop
+  });
+}
+
+function scrollAboutMe() {
+  window.scrollTo({
+    'behavior': 'smooth',
+    'left': 0,
+    'top': 710
   });
 }

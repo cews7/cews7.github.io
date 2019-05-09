@@ -11,10 +11,21 @@ a:hover {
 
 h2 {
   font-family: 'Heebo', sans-serif !important;
+  opacity: 0.6;
 }
 
-.container {
-  padding: 50px;
+.about-me {
+  font-family: 'Montserrat', sans-serif !important;
+  text-align: center;
+  opacity: 0.6;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 320px;
+}
+
+.divider {
+  font-size: 42px;
+  opacity: 0.5;
 }
 
 .gradient-background {
@@ -25,20 +36,12 @@ h2 {
   background-attachment: fixed;
 }
 
-.remove-bullets {
-  list-style-type: none;
-}
-
-.link-info {
-  font-size: 24px;
-}
-
 .hello {
   text-align: center;
-  margin-top: 220px;
   opacity: 0.5;
   flex-grow: 1;
-  margin-bottom: 380px;
+  margin-bottom: 500px;
+  margin-top: 150px;
 }
 
 .hello-font {
@@ -50,21 +53,17 @@ h2 {
   height: 400px;
 }
 
-.underline-tech {
-  text-decoration: underline;
+.link-info {
+  font-size: 24px;
 }
 
-.divider {
-  font-size: 48px;
-  opacity: 0.5;
-}
-
-.container {
-  padding: 50px;
-}
-
-.commute-tracker {
-  text-align: left;
+.projects-container {
+  padding: 30px;
+  border: 1px solid rgba(41, 61, 58, 0.5);
+  border-width: thin;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .projects-section {
@@ -73,6 +72,17 @@ h2 {
   text-align: center;
 }
 
+.projects-header {
+  font-family: 'Montserrat', sans-serif !important;
+  text-align: center;
+  opacity: 0.6;
+  padding-top: 30px;
+}
+
 .project-font {
   font-family: 'Montserrat', sans-serif !important;
+}
+
+.remove-bullets {
+  list-style-type: none;
 }
