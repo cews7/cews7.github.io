@@ -9,8 +9,12 @@ a:hover {
   color: #1A535C;
 }
 
+h2 {
+  font-family: 'Heebo', sans-serif !important;
+}
+
 .container {
-  display: flex;
+  padding: 50px;
 }
 
 .gradient-background {
@@ -26,7 +30,6 @@ a:hover {
 }
 
 .link-info {
-  text-align: left;
   font-size: 24px;
 }
 
@@ -35,6 +38,7 @@ a:hover {
   margin-top: 220px;
   opacity: 0.5;
   flex-grow: 1;
+  margin-bottom: 380px;
 }
 
 .hello-font {
@@ -42,8 +46,21 @@ a:hover {
   font-size: 48px;
 }
 
-.mini-market {
-  text-align: right;
+.img-size {
+  height: 400px;
+}
+
+.underline-tech {
+  text-decoration: underline;
+}
+
+.divider {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.container {
+  padding: 50px;
 }
 
 .commute-tracker {
@@ -53,6 +70,9 @@ a:hover {
 .projects-section {
   width: 100%;
   height: 100vh;
-  line-height: 100vh;
   text-align: center;
+}
+
+.project-font {
+  font-family: 'Montserrat', sans-serif !important;
 }
