@@ -17,10 +17,13 @@ h2 {
 .about-me {
   font-family: 'Montserrat', sans-serif !important;
   text-align: center;
-  opacity: 0.6;
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 320px;
+}
+
+.champlain-college-logo {
+  height: 50px;
 }
 
 .divider {
@@ -59,7 +62,6 @@ h2 {
 
 .projects-container {
   padding: 30px;
-  /* border: 1px solid rgba(41, 61, 58, 0.5); */
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   margin-left: 20px;
@@ -73,7 +75,7 @@ h2 {
   text-align: center;
 }
 
-.projects-header {
+.section-header {
   font-family: 'Montserrat', sans-serif !important;
   text-align: center;
   opacity: 0.6;
@@ -86,4 +88,115 @@ h2 {
 
 .remove-bullets {
   list-style-type: none;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  opacity: 0.7;
+  border-radius: 100%;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -19px;
+  background-color: white;
+  border: 3px solid #1A535C;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  right: 7%;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.right::after {
+  left: -16px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+  .right {
+    left: 0%;
+  }
 }

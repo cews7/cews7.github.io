@@ -1,4 +1,4 @@
-var string = "Hi, I'm Eric. I'm a full-stack developer."
+var string = "Hi, I'm Eric. I'm a full-stack web developer."
 var el = document.getElementById('name');
 var split = string.split("");
 (function animate() {
@@ -18,6 +18,8 @@ function scrollAboutMe() {
   window.scrollTo({
     'behavior': 'smooth',
     'left': 0,
-    'top': 710
+    'top': document.querySelector('.about-me').offsetTop
   });
 }
+
+new HorizontalTimeline(document.getElementByID('js-cd-h-timeline'));
