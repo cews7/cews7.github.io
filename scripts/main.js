@@ -1,9 +1,9 @@
-var string = "Hi, I'm Eric. I'm a full-stack web developer."
-var el = document.getElementById('name');
-var split = string.split("");
+const string = "Hi, I'm Eric. I'm a full-stack web developer."
+let el = document.getElementById('name');
+let split = string.split("");
 (function animate() {
 split.length > 0 ? el.innerHTML += split.shift() : clearTimeout(running);
-var running = setTimeout(animate, 110);
+let running = setTimeout(animate, 110);
 })();
 
 function scrollProjects() {
@@ -21,5 +21,22 @@ function scrollAboutMe() {
     'top': document.querySelector('.about-me').offsetTop
   });
 }
+let modal = document.getElementById('resume');
 
-new HorizontalTimeline(document.getElementByID('js-cd-h-timeline'));
+let btn = document.getElementById("resume-modal");
+
+let span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
