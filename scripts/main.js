@@ -21,6 +21,15 @@ function scrollAboutMe() {
     'top': document.querySelector('.about-me').offsetTop
   });
 }
+
+function scrollContactMe() {
+  window.scrollTo({
+    'behavior': 'smooth',
+    'left': 0,
+    'top': document.querySelector('.contact-me').offsetTop
+  });
+}
+
 let modal = document.getElementById('resume');
 
 let btn = document.getElementById("resume-modal");

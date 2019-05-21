@@ -13,27 +13,20 @@
   </head>
   <body class="gradient-background">
     <div class="link-info">
-      <ul class="remove-bullets">
-        <li>
-          <a onclick="scrollAboutMe();">My Story</a>
-        </li>
-        <li>
-          <a onclick="scrollProjects();">Projects</a>
-        </li>
-        <li>
-          <a href="https://medium.com/@ericwahlgrensauro" target="_blank">Blog</a>
-        </li>
-        <li>
-          <a href="https://github.com/cews7" target="_blank">GitHub</a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/charleswahlgrensauro/" target="_blank">LinkedIn</a>
-        </li>
-        <li>
-          <a href="#" id="resume-modal">Resume</a>
-        </li>
-        <div class="divider">-</div>
-      </ul>
+    <ul class="remove-bullets">
+     <li class="sub-menu-parent" tab-index="0">
+       <a class="whats-here" style="color: #cc5500;">+</a>
+       <ul class="sub-menu remove-bullets">
+         <li><a onclick="scrollAboutMe();">My Story</a></li>
+         <li><a onclick="scrollProjects();">Projects</a></li>
+         <li><a href="https://medium.com/@ericwahlgrensauro" target="_blank">Blog</a></li>
+         <li><a href="https://github.com/cews7" target="_blank">GitHub</a></li>
+         <li><a href="https://www.linkedin.com/in/charleswahlgrensauro/" target="_blank">LinkedIn</a></li>
+         <li><a href="#" id="resume-modal">Resume</a></li>
+         <li><a onclick="scrollContactMe();">Contact</a></li>
+       </ul>
+     </li>
+    </ul>
     </div>
     <div id="resume" class="modal">
       <div class="modal-content">
@@ -148,5 +141,8 @@
       </div>
     </div>
     <script src="scripts/main.js"></script>
+    <div class="contact-me">
+      <h3>email me at <span class="burnt-edge">[ </span><a href="mailto:cwahlgrensauro@gmail.com" style="color: #1A535C" target="_top">cwahlgrensauro@gmail.com</a><span class="burnt-edge"> ]<span/></h3>
+    </div>
   </body>
 </html>
