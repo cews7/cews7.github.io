@@ -117,7 +117,6 @@ h2 {
 .whats-here {
   color: #cc5500;
   opacity: 0.7;
-  font-size: 58px;
 }
 
 .turing-logo {
@@ -279,7 +278,10 @@ h2 {
   cursor: pointer;
 }
 
-.sub-menu-parent { position: relative; }
+.sub-menu-parent {
+  position: relative;
+  width: 120px;
+}
 
 .sub-menu {
   visibility: hidden;
