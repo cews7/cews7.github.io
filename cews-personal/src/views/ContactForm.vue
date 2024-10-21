@@ -1,22 +1,21 @@
 <template>
-  <div class="contact-form">
-    <h1>Contact Me</h1>
-    <form>
-      <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-      <button type="submit">Send</button>
+  <div class="contact-form-container">
+    <div class="contact-form">
+      <h1>Contact Me</h1>
+      <form>
+        <div class="form-group">
+          <input type="text" id="name" name="name" required placeholder="Name">
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" required placeholder="Email">
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" required placeholder="Message"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
       <p>Or email me directly at cwahlgrensauro@gmail.com</p>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -24,44 +23,85 @@
 export default {
   name: 'ContactForm',
 }
-
 </script>
 
 <style scoped>
-.contact-form {
-  margin-top: 10px;
-  width: 50%;
-}
-
-.contact-form form {
+.contact-form-container {
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  justify-content: left;
+  height: 100vh;
 }
 
-.contact-form form div {
-  margin-bottom: 10px;
+.contact-form {
+  width: 400px;
+  padding: 30px;
+  position: relative;
+  background-color: white; /* Add a background to ensure content is above the spinning border */
+  z-index: 1; /* Ensure the form content is above the spinning border */
 }
 
-.contact-form form label {
-  margin-bottom: 5px;
+.spinning-border {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px dotted #007bff;
+  border-radius: 10px;
+  animation: spin 30s linear infinite;
 }
 
-.contact-form form input,
-.contact-form form textarea {
-  padding: 5px;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.contact-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
   width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #007bff;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-.contact-form form button {
-  padding: 10px 20px;
-  background-color: #007bff;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: #0056b3;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00008B;
   color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.contact-form form button:hover {
-  background-color: #0056b3;
+.contact-form button:hover {
+  background-color: #000066;
+}
+
+.contact-form p {
+  text-align: center;
+  margin-top: 20px;
 }
 </style>

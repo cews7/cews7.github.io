@@ -78,7 +78,6 @@ export default {
 .navbar {
   width: 200px;
   padding: 20px;
-  background-color: #f5f5f5;
   margin-top: 20px; /* Add some space between header and navbar */
 }
 
@@ -87,7 +86,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Align content to top */
-  padding: 20px;
   padding-top: 40px; /* Add more top padding to content */
 }
 
@@ -148,9 +146,10 @@ h1, h2, h3, h4, h5, h6 {
 .tile-3 { top: 66.66%; transform-origin: left; }
 
 .main-header {
-  text-align: left;
-  padding: 20px 0 20px 40px; /* Top, Right, Bottom, Left */
-  background-color: #f8f8f8; /* Optional: adds a subtle background */
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  padding-left: 40px;
 }
 
 .main-header h1 {
