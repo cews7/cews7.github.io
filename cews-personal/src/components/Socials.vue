@@ -20,20 +20,33 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .social-icon {
   width: 24px;
   height: 24px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  filter: brightness(0); /* This makes the icons black */
 }
 
 .social-icon:hover {
   opacity: 0.7;
+  filter: brightness(0) invert(0.3); /* This makes the icons gray on hover */
 }
 
 .linkedin-icon {
   width: 21px; /* Adjust if needed to match the original image size */
+}
+
+@media screen and (max-width: 768px) {
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .linkedin-icon {
+    width: 18px;
+  }
 }
 </style>

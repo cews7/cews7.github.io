@@ -1,11 +1,13 @@
 <template>
   <div class="space-invaders">
-    <h2 @mouseover="unfoldTiles" @mouseleave="foldTiles" class="space-invaders-header">Space Invaders</h2>
+    <h2 @mouseover="unfoldTiles" @mouseleave="foldTiles" class="space-invaders-header">
+      <a href="https://project30.itch.io/space-invaders-clone" target="_blank">Space Invaders Clone</a>
+    </h2>
     <h3>Personal Project <br> 2024</h3>
     <p>I made a clone of Space Invaders using the Godot Engine.</p>
     <div class="skills">
       <span class="pill">GDScript</span>
-      <span class="pill">Godot</span>
+      <span class="pill">Godot 4</span>
       <span class="pill">Aseprite</span>
     </div>
   </div>
@@ -45,6 +47,11 @@ export default {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 2px 2px #4a4a4a;
+}
+
+.space-invaders-header a {
+  text-decoration: none;
+  color: #000;
 }
 
 /* Optional: Add some animation for a retro effect */

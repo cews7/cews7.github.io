@@ -48,5 +48,15 @@ export default {
   padding: 16px;
   margin: 0;
 }
-</style>
 
+@media screen and (max-width: 480px) {
+  .card {
+    border-width: 1px;
+  }
+
+  .card-description {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+</style>

@@ -28,27 +28,16 @@ export default {
 <style scoped>
 .contact-form-container {
   display: flex;
-  justify-content: left;
-  height: 100vh;
-}
+  justify-content: center;
+  align-items: center;
+} 
 
 .contact-form {
-  width: 400px;
+  width: 100%;
+  max-width: 600px;
   padding: 30px;
-  position: relative;
-  background-color: white; /* Add a background to ensure content is above the spinning border */
-  z-index: 1; /* Ensure the form content is above the spinning border */
-}
-
-.spinning-border {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border: 2px dotted #007bff;
-  border-radius: 10px;
-  animation: spin 30s linear infinite;
+  margin: 0 15px;
+  background-color: white;
 }
 
 @keyframes spin {
@@ -57,7 +46,7 @@ export default {
 }
 
 .contact-form h1 {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
 }
 
@@ -67,8 +56,8 @@ export default {
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 10px 0;
+  width: 90%;
+  padding: 10px;
   border: none;
   border-bottom: 1px solid #007bff;
   background-color: transparent;
@@ -87,11 +76,15 @@ export default {
 }
 
 .contact-form button {
-  width: 100%;
-  padding: 10px;
+  display: block;
+  width: auto;
+  min-width: 120px;
+  margin: 0 auto;
+  padding: 10px 20px;
   background-color: #00008B;
   color: white;
   border: none;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -103,5 +96,15 @@ export default {
 .contact-form p {
   text-align: center;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-form {
+    padding: 20px 15px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
 }
 </style>

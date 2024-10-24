@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <header class="main-header">
+    <header class="main-header sticky">
       <h1>
         <span v-for="(letter, index) in nameArray" :key="index" :style="{ animationDelay: `${index * 50}ms` }">
           {{ letter }}
         </span>
       </h1>
+      <h2 class="main-header-subtitle">
+        Software Engineer
+      </h2>
+      <Socials class="header-socials" />
     </header>
     <div class="layout">
       <Navbar class="navbar" />
@@ -27,11 +31,13 @@
 
 <script>
 import Navbar from './components/Navbar.vue'
+import Socials from './components/Socials.vue'
 
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    Socials
   },
   data() {
     return {
@@ -71,29 +77,25 @@ export default {
 .tile-3 { background-color: var(--tile-3-color, transparent); }
 
 .layout {
-  display: flex;
-  min-height: calc(100vh - 80px); /* Adjust based on new header height */
-}
-
-.navbar {
-  width: 200px;
-  padding: 20px;
-  margin-top: 20px; /* Add some space between header and navbar */
+  height: calc(100vh - 200px); /* Change min-height to height */
+  z-index: 0;
+  overflow: auto; /* Hide overflow on layout */
 }
 
 .content-wrapper {
   flex-grow: 1;
   display: flex;
+  margin-left: calc(20px + 2%);
   justify-content: center;
-  align-items: flex-start; /* Align content to top */
-  padding-top: 40px; /* Add more top padding to content */
+  align-items: flex-start;
+  overflow-y: auto; /* Only scroll content-wrapper when needed */
 }
 
 .content {
   max-width: 800px;
   width: 100%;
   position: relative;
-  min-height: 400px; /* Adjust this value based on your content */
+  height: auto; /* Remove fixed height */
 }
 
 /* Fade and scale transition */
@@ -130,7 +132,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1;
+  z-index: 2000; /* Increased from -1 to be above header */
+}
+
+/* Add this media query to hide tiles on mobile */
+@media screen and (max-width: 768px) {
+  .tile-container {
+    display: none;
+  }
 }
 
 .tile {
@@ -146,16 +155,33 @@ h1, h2, h3, h4, h5, h6 {
 .tile-3 { top: 66.66%; transform-origin: left; }
 
 .main-header {
-  text-align: center;
-  padding-top: 60px;
-  padding-bottom: 20px;
-  padding-left: 40px;
+  margin: 0;
+  padding: 60px 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.8); /* Add the background color here as well */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
 }
 
 .main-header h1 {
   margin: 0;
-  font-size: 2.5rem; /* Increase font size */
-  font-weight: 300; /* Optional: makes the font a bit lighter */
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .main-header h1 span {
@@ -165,12 +191,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-header h1 span:nth-child(5) {
-  margin-right: 0.25em; /* Add space after "Eric" */
+  margin-right: 0.25em;
+}
+
+.main-header-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
 }
 
 @keyframes fadeIn {
   to {
     opacity: 1;
+  }
+}
+
+/* Add these responsive styles */
+@media screen and (max-width: 768px) {
+  .content-wrapper {
+    padding-top: 20px;
+    padding-bottom: 60px; /* Add space for the bottom navbar */
+  }
+
+  .main-header {
+    padding: 30px 20px;
+  }
+
+  .main-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-socials {
+    margin-top: 0.5rem;
+  }
+
+  .main-header-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .main-header {
+    padding-top: 20px;
   }
 }
 </style>
