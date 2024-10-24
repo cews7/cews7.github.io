@@ -2,7 +2,7 @@
   <div class="contact-form-container">
     <div class="contact-form">
       <h1>Contact Me</h1>
-      <form>
+      <form :action="`https://formspree.io/f/${formspreeFormId}`" method="POST">
         <div class="form-group">
           <input type="text" id="name" name="name" required placeholder="Name">
         </div>
@@ -22,6 +22,12 @@
 <script>
 export default {
   name: 'ContactForm',
+
+  data() {
+    return {
+      formspreeFormId: import.meta.env.VITE_FORMSPREE_FORM_ID
+    }
+  },
 }
 </script>
 
@@ -38,11 +44,6 @@ export default {
   padding: 30px;
   margin: 0 15px;
   background-color: white;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 .contact-form h1 {

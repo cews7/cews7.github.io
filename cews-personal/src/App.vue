@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: rgba(255, 255, 255, 0.8); /* Add the background color here as well */
+  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: fixed;
@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 768px) {
   .content-wrapper {
     padding-top: 20px;
-    padding-bottom: 60px; /* Add space for the bottom navbar */
+    padding-bottom: 60px;
   }
 
   .main-header {

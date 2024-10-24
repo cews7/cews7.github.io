@@ -10,9 +10,9 @@
         Hi! I'm Eric. I'm a software engineer with a passion for building products that are both functional and beautiful.
         When I'm not coding, you can find me 
         <span class="highlight backpacking" @mouseover="changeImage('backpacking')" @mouseleave="resetImage">backpacking,</span>
-        <span class="highlight skiing" @mouseover="changeImage('skiing')" @mouseleave="resetImage">skiing,</span> 
-        <span class="highlight friends" @mouseover="changeImage('friends')" @mouseleave="resetImage">hanging out with friends,</span> or 
-        <span class="highlight gaming" @mouseover="changeImage('gaming')" @mouseleave="resetImage">gaming</span>.
+        <span class="highlight skiing" @mouseover="changeImage('skiing')" @mouseleave="resetImage">skiing,</span> working in the
+        <span class="highlight garden" @mouseover="changeImage('garden')" @mouseleave="resetImage">garden,</span> or hanging out with these
+        <span class="highlight pets" @mouseover="changeImage('pets')" @mouseleave="resetImage">two rascals</span>.
       </p>
     </div>
   </div>
@@ -27,10 +27,10 @@ export default {
       currentImage: '/profile-photo.jpeg',
       imageChangeTimeout: null,
       images: {
-        backpacking: 'https://picsum.photos/seed/backpacking/400/300',
-        skiing: 'https://picsum.photos/seed/skiing/400/300',
-        friends: 'https://picsum.photos/seed/friends/400/300',
-        gaming: 'https://picsum.photos/seed/gaming/400/300'
+        backpacking: '/backpacking-photo.jpeg',
+        skiing: '/skiing-photo.jpg',
+        garden: '/garden-photo.jpg',
+        pets: '/pets-photo.jpeg'
       }
     }
   },
@@ -153,17 +153,17 @@ export default {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0,50 C 30,40 70,60 100,50 C 130,40 170,60 200,50' stroke='%2381d4fa' stroke-width='80' fill='none' style='stroke-linecap: round'/%3E%3C/svg%3E");
 }
 
-.friends {
+.pets {
   color: #1B5E20;
 }
-.friends::before {
+.pets::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0,50 C 30,40 70,60 100,50 C 130,40 170,60 200,50' stroke='%23a5d6a7' stroke-width='80' fill='none' style='stroke-linecap: round'/%3E%3C/svg%3E");
 }
 
-.gaming {
+.garden {
   color: #9e0a0a;
 }
-.gaming::before {
+.garden::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0,50 C 30,40 70,60 100,50 C 130,40 170,60 200,50' stroke='%23ef9a9a' stroke-width='80' fill='none' style='stroke-linecap: round'/%3E%3C/svg%3E");
 }
 </style>

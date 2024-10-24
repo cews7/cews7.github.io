@@ -3,7 +3,6 @@
     <div class="job-list">
       <JumpCloud />
       <Crownpeak />
-      <!-- Add other job components here -->
     </div>
   </div>
 </template>
