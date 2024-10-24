@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <header class="main-header sticky">
-      <h1>
-        <span v-for="(letter, index) in nameArray" :key="index" :style="{ animationDelay: `${index * 50}ms` }">
-          {{ letter }}
-        </span>
-      </h1>
+      <router-link to="/" class="header-link">
+        <h1>
+          {{ name }}
+        </h1>
+      </router-link>
       <h2 class="main-header-subtitle">
         Software Engineer
       </h2>
@@ -42,11 +42,6 @@ export default {
   data() {
     return {
       name: 'Eric Wahlgren-Sauro'
-    }
-  },
-  computed: {
-    nameArray() {
-      return this.name.split('');
     }
   },
   mounted() {
@@ -91,6 +86,11 @@ export default {
   overflow-y: auto; /* Only scroll content-wrapper when needed */
 }
 
+.header-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .content {
   max-width: 800px;
   width: 100%;
@@ -98,27 +98,6 @@ export default {
   height: auto; /* Remove fixed height */
 }
 
-/* Fade and scale transition */
-.fade-scale-enter-active,
-.fade-scale-leave-active {
-  transition: all 0.3s ease;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.fade-scale-enter-from,
-.fade-scale-leave-to {
-  opacity: 0;
-  transform: scale(0.95);
-}
-
-.fade-scale-enter-to,
-.fade-scale-leave-from {
-  opacity: 1;
-  transform: scale(1);
-}
 
 /* Add this new style for headers */
 h1, h2, h3, h4, h5, h6 {
