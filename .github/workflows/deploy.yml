@@ -19,7 +19,9 @@ jobs:
 
       - name: Install Dependencies
         working-directory: ./cews-personal
-        run: npm install
+        run: |
+          npm install
+          npm install @vitejs/plugin-vue --save-dev
 
       - name: Build
         working-directory: ./cews-personal
