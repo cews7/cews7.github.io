@@ -83,7 +83,7 @@ export default {
   margin-left: calc(20px + 2%);
   justify-content: center;
   align-items: flex-start;
-  overflow-y: auto; /* Only scroll content-wrapper when needed */
+  overflow-y: auto;
 }
 
 .header-link {
@@ -95,11 +95,10 @@ export default {
   max-width: 800px;
   width: 100%;
   position: relative;
-  height: auto; /* Remove fixed height */
+  height: auto;
 }
 
 
-/* Add this new style for headers */
 h1, h2, h3, h4, h5, h6 {
   transition: color var(--transition-time) ease;
 }
@@ -135,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-header {
   margin: 0;
-  padding: 60px 40px 20px;
+  padding: 60px 0 20px calc(20px + 2%);
   width: 100%;
   box-sizing: border-box;
   text-align: left;

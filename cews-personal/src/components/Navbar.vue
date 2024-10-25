@@ -43,10 +43,10 @@ export default {
 <style scoped>
 .navbar {
   position: fixed;
-  left: 0;
+  left: calc(20px + 2%);
   top: 50%;
   transform: translateY(-50%);
-  padding: 20px;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
 }
@@ -88,7 +88,7 @@ export default {
     left: 0;
     right: 0;
     transform: none;
-    padding: 10px 0; /* Remove horizontal padding */
+    padding: 10px 0;
     background-color: #fff;
     box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
     z-index: 1000;
@@ -98,23 +98,30 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Add padding to ul instead */
-  }
-
-  .navbar-bottom ul::before,
-  .navbar-bottom ul::after {
-    content: '';
-    width: 10px; /* Adjust this value to control spacing */
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
 
   .navbar-bottom .navbar-item {
     margin-bottom: 0;
+    flex: 1;
+    text-align: center;
   }
 
   .navbar-bottom .navbar-item a {
     font-size: 14px;
-    padding: 5px 8px;
-    white-space: nowrap; /* Prevent text wrapping */
+    padding: 10px 5px;
+    white-space: nowrap;
+    display: block;
+  }
+
+  .navbar-bottom .navbar-item:first-child a {
+    padding-left: 20px;
+  }
+
+  .navbar-bottom .navbar-item:last-child a {
+    padding-right: 20px;
   }
 }
 </style>

@@ -4,7 +4,8 @@
       <a href="https://www.crownpeak.com/" target="_blank" class="crownpeak-header">crownpeak</a>
     </h2>
     <h3>Software Engineer <br> 2017-2019</h3>
-    <p>Crownpeak specializes in building content management systems.</p> 
+    <p><i>Crownpeak is an enterprise content management system.</i></p>
+    <p>I was a full stack developer on the core product, where I built and maintained features for the SaaS platform.</p>
     <div class="skills">
       <span class="pill">.NET</span>
       <span class="pill">AngularJS</span>

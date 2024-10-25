@@ -4,6 +4,7 @@
       <a href="https://project30.itch.io/space-invaders-clone" target="_blank">Space Invaders Clone</a>
     </h2>
     <h3>Personal Project <br> 2024</h3>
+    <p><i>A classic arcade game.</i></p>
     <p>I made a clone of Space Invaders using the Godot Engine.</p>
     <div class="skills">
       <span class="pill">GDScript</span>
