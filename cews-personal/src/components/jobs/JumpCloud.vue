@@ -4,7 +4,7 @@
       <a href="https://jumpcloud.com/" target="_blank" class="jumpcloud-header">JumpCloud</a>
     </h2>
     <h3>Senior Software Engineer <br> 2019-2024</h3>
-    <p>JumpCloud is a cloud-based directory and access management platform.</p>
+    <p><i>JumpCloud provides a comprehensive IT management platform, similar to how Salesforce serves as a central hub for customer relationship management.</i></p>
     <p>On the Growth team, I helped develop and implement our entire monetization strategy within the platform.</p>
     <div class="skills">
       <span class="pill">Vue.js</span>

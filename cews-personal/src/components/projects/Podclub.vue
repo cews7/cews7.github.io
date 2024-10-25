@@ -4,7 +4,11 @@
       <a href="https://podclub.io" target="_blank">podclub.</a>
     </h2>
     <h3>Co-Creator <br> 2019-present</h3>
-    <p>A platform that allows users to self-organize into groups and discuss podcasts.</p>
+    <p><i>A platform that allows users to self-organize into groups and discuss podcasts of all types.</i></p>
+    <p>
+      I co-created the platform with a friend, where I was responsible for coming up with the idea and breaking it down into manageable pieces.
+      I've helped run the platform since launch.
+    </p>
     <div class="skills">
       <span class="pill">Project Management</span>
       <span class="pill">Vue.js</span>
