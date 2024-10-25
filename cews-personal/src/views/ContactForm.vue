@@ -1,7 +1,7 @@
 <template>
   <div class="contact-form-container">
     <div class="contact-form">
-      <h1>Contact Me</h1>
+      <h1>What can I build for you?</h1>
       <form :action="`https://formspree.io/f/${formspreeFormId}`" method="POST">
         <div class="form-group">
           <input type="text" id="name" name="name" required placeholder="Name">
