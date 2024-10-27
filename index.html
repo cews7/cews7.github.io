@@ -5,22 +5,20 @@
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eric Wahlgren-Sauro</title>
-    <script type="module" crossorigin src="/assets/index-CYoFMV9s.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-rqp747vU.css">
+    <script type="module" crossorigin src="/assets/index-BbsQg3DL.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-H4Colv_F.css">
   </head>
   <body>
     <div id="app"></div>
     <script>
-      // Check if we were redirected from 404.html
-      (function() {
-        const redirect = new URLSearchParams(window.location.search).get('redirect');
-        if (redirect) {
-          // Remove the 'redirect' query parameter
-          const url = new URL(window.location.href);
-          url.searchParams.delete('redirect');
-          window.history.replaceState(null, null, redirect);
-        }
-      })();
+  // Check if we need to redirect
+  (function() {
+    const redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect !== window.location.pathname) {
+        history.replaceState(null, null, redirect);
+      }
+    })(); 
     </script>
   </body>
 </html>
