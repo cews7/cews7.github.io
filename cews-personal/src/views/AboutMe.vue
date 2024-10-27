@@ -2,7 +2,7 @@
   <div class="about-container">
     <div class="image-container">
       <transition name="fade" mode="out-in">
-        <img :src="currentImage || '/profile-photo.jpeg'" alt="Profile photo" :key="currentImage" />
+        <img :src="currentImage || '/assets/profile-photo.jpeg'" alt="Profile photo" :key="currentImage" />
       </transition>
     </div>
     <div class="text-container">
@@ -24,13 +24,13 @@ export default {
 
   data() {
     return {
-      currentImage: '/profile-photo.jpeg',
+      currentImage: '/assets/profile-photo.jpeg',
       imageChangeTimeout: null,
       images: {
-        backpacking: '/backpacking-photo.jpeg',
-        skiing: '/skiing-photo.jpg',
-        garden: '/garden-photo.jpg',
-        pets: '/pets-photo.jpeg'
+        backpacking: '/assets/backpacking-photo.jpeg',
+        skiing: '/assets/skiing-photo.jpg',
+        garden: '/assets/garden-photo.jpg',
+        pets: '/assets/pets-photo.jpeg'
       }
     }
   },
@@ -45,7 +45,7 @@ export default {
     resetImage() {
       clearTimeout(this.imageChangeTimeout);
       this.imageChangeTimeout = setTimeout(() => {
-        this.currentImage = '/profile-photo.jpeg';
+        this.currentImage = '/assets/profile-photo.jpeg';
       }, 1000);
     }
   },

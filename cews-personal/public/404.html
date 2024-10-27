@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // Get the current path and redirect to the same path on index.html
+      const path = window.location.pathname;
+      const redirectURL = `/?redirect=${path}`;
+      window.location.replace(redirectURL);
+    </script>
+  </head>
+</html>
