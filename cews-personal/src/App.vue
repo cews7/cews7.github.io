@@ -15,9 +15,11 @@
       <Navbar class="navbar" />
       <main class="content-wrapper">
         <div class="content">
-          <transition name="fade-scale" mode="out-in">
-            <router-view :key="$route.fullPath"></router-view>
-          </transition>
+          <router-view v-slot="{ Component }">
+            <transition name="fade" mode="out-in">
+              <component :is="Component" :key="$route.fullPath" />
+            </transition>
+          </router-view>  
         </div>
       </main>
     </div>
@@ -84,6 +86,16 @@ export default {
   justify-content: center;
   align-items: flex-start;
   overflow-y: auto;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .header-link {

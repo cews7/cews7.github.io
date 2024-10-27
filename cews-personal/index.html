@@ -10,16 +10,14 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
     <script>
-      // Check if we were redirected from 404.html
-      (function() {
-        const redirect = new URLSearchParams(window.location.search).get('redirect');
-        if (redirect) {
-          // Remove the 'redirect' query parameter
-          const url = new URL(window.location.href);
-          url.searchParams.delete('redirect');
-          window.history.replaceState(null, null, redirect);
-        }
-      })();
+  // Check if we need to redirect
+  (function() {
+    const redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect !== window.location.pathname) {
+        history.replaceState(null, null, redirect);
+      }
+    })(); 
     </script>
   </body>
 </html>

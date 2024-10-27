@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="refresh" content="0;url=/">
     <script>
-      // Get the current path and redirect to the same path on index.html
-      const path = window.location.pathname;
-      const redirectURL = `/?redirect=${path}`;
-      window.location.replace(redirectURL);
+      // Fallback for browsers that don't support meta refresh
+      sessionStorage.redirect = window.location.pathname;
+      window.location.href = "/";
     </script>
   </head>
 </html>
