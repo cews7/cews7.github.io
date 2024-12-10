@@ -30,6 +30,14 @@ const routes = [
     path: '/contact',
     name: 'ContactForm',
     component: ContactForm
+  },
+  {
+    path: '/legal',
+    component: () => import('../views/Legal.vue')
+  },
+  {
+    path: '/legal/:docName',
+    component: () => import('../components/LegalDoc.vue')
   }
 ]
 

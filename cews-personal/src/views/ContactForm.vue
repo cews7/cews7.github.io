@@ -14,7 +14,7 @@
         </div>
         <button type="submit">Submit</button>
       </form>
-      <p>Or email me directly at cwahlgrensauro@gmail.com</p>
+      <p>Or email me directly at <a href="mailto:cwahlgrensauro@gmail.com">cwahlgrensauro@gmail.com</a></p>
     </div>
   </div>
 </template>
