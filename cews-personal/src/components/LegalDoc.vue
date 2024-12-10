@@ -7,7 +7,7 @@ const content = ref('')
 const route = useRoute()
 
 const docs = {
-  'youtube-notes-privacy-policy': () => fetch('/src/docs/youtube-notes-privacy-policy.md').then(res => res.text())
+  'youtube-notes-privacy-policy': () => fetch('/docs/youtube-notes-privacy-policy.md').then(res => res.text())
 }
 
 onMounted(async () => {
