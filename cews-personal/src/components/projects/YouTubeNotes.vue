@@ -21,9 +21,9 @@
     name: 'YouTubeNotes',
     methods: {
       unfoldTiles() {
-        document.documentElement.style.setProperty('--tile-1-color', 'rgba(255, 0, 0, 0.5)'); // YouTube Red
-        document.documentElement.style.setProperty('--tile-2-color', 'rgba(33, 33, 33, 0.5)'); // YouTube Dark Gray
-        document.documentElement.style.setProperty('--tile-3-color', 'rgba(255, 255, 255, 0.5)'); // YouTube White
+        document.documentElement.style.setProperty('--tile-1-color', 'rgba(255, 0, 0, 1)');
+        document.documentElement.style.setProperty('--tile-2-color', 'rgba(33, 33, 33, 0.5)');
+        document.documentElement.style.setProperty('--tile-3-color', 'rgba(0, 0, 0, 1)');
         document.querySelectorAll('.tile').forEach(tile => {
           tile.style.transform = 'scaleX(1)';
           tile.style.width = '20px';  // Adjust this value as needed
