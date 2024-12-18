@@ -76,7 +76,6 @@ export default {
 .layout {
   height: calc(100vh - 200px); /* Change min-height to height */
   z-index: 0;
-  overflow: auto; /* Hide overflow on layout */
 }
 
 .content-wrapper {
