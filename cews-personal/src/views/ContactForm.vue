@@ -19,16 +19,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ContactForm',
-
-  data() {
-    return {
-      formspreeFormId: import.meta.env.VITE_FORMSPREE_FORM_ID
-    }
-  },
-}
+<script setup lang="ts">
+const formspreeFormId = import.meta.env.VITE_FORMSPREE_FORM_ID
 </script>
 
 <style scoped>

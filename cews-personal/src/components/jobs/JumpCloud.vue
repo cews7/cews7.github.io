@@ -15,25 +15,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'JumpCloud',
-  methods: {
-    unfoldTiles() {
-      document.documentElement.style.setProperty('--tile-1-color', 'rgba(26, 43, 60, 0.5)');
-      document.documentElement.style.setProperty('--tile-2-color', 'rgba(0, 182, 189, 0.5)');
-      document.documentElement.style.setProperty('--tile-3-color', 'rgba(255, 153, 0, 0.5)');
-      document.querySelectorAll('.tile').forEach(tile => {
-        tile.style.transform = 'scaleX(1)';
-        tile.style.width = '20px';  // Adjust this value as needed
-        tile.style.left = tile.classList.contains('tile-2') ? 'auto' : '0';
-        tile.style.right = tile.classList.contains('tile-2') ? '0' : 'auto';
-      });
-    },
-    foldTiles() {
-      document.querySelectorAll('.tile').forEach(tile => tile.style.transform = 'scaleX(0)');
-    }
-  }
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const tiles = ref<HTMLElement[]>([])
+
+onMounted(() => {
+  tiles.value = Array.from(document.querySelectorAll('.tile'))
+})
+
+const unfoldTiles = () => {
+  document.documentElement.style.setProperty('--tile-1-color', 'rgba(26, 43, 60, 0.5)')
+  document.documentElement.style.setProperty('--tile-2-color', 'rgba(0, 182, 189, 0.5)')
+  document.documentElement.style.setProperty('--tile-3-color', 'rgba(255, 153, 0, 0.5)')
+  
+  tiles.value.forEach(tile => {
+    tile.style.transform = 'scaleX(1)'
+    tile.style.width = '20px'
+    tile.style.left = tile.classList.contains('tile-2') ? 'auto' : '0'
+    tile.style.right = tile.classList.contains('tile-2') ? '0' : 'auto'
+  })
+}
+
+const foldTiles = () => {
+  tiles.value.forEach(tile => 
+    tile.style.transform = 'scaleX(0)'
+  )
 }
 </script>
 

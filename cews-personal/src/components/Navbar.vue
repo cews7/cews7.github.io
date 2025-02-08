@@ -17,27 +17,23 @@
   </nav>
 </template>
 
-<script>
-export default {
-  name: 'Navbar',
-  data() {
-    return {
-      isBottomNav: false
-    }
-  },
-  mounted() {
-    this.checkScreenSize()
-    window.addEventListener('resize', this.checkScreenSize)
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.checkScreenSize)
-  },
-  methods: {
-    checkScreenSize() {
-      this.isBottomNav = window.innerWidth <= 1240
-    }
-  }
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const isBottomNav = ref(false)
+
+const checkScreenSize = () => {
+  isBottomNav.value = window.innerWidth <= 1240
 }
+
+onMounted(() => {
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkScreenSize)
+})
 </script>
 
 <style scoped>

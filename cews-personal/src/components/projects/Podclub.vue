@@ -16,25 +16,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Podclub',
-  methods: {
-    unfoldTiles() {
-      document.documentElement.style.setProperty('--tile-1-color', 'rgba(0, 128, 0, 0.5)');
-      document.documentElement.style.setProperty('--tile-2-color', 'rgba(0, 64, 0, 0.5)');
-      document.documentElement.style.setProperty('--tile-3-color', 'rgba(0, 0, 0, 0.5)');
-      document.querySelectorAll('.tile').forEach(tile => {
-        tile.style.transform = 'scaleX(1)';
-        tile.style.width = '20px';  // Adjust this value as needed
-        tile.style.left = tile.classList.contains('tile-2') ? 'auto' : '0';
-        tile.style.right = tile.classList.contains('tile-2') ? '0' : 'auto';
-      });
-    },
-    foldTiles() {
-      document.querySelectorAll('.tile').forEach(tile => tile.style.transform = 'scaleX(0)');
-    }
-  }
+<script setup lang="ts">
+const unfoldTiles = () => {
+  document.documentElement.style.setProperty('--tile-1-color', 'rgba(0, 128, 0, 0.5)')
+  document.documentElement.style.setProperty('--tile-2-color', 'rgba(0, 64, 0, 0.5)')
+  document.documentElement.style.setProperty('--tile-3-color', 'rgba(0, 0, 0, 0.5)')
+  
+  document.querySelectorAll('.tile').forEach(tile => {
+    const el = tile as HTMLElement
+    el.style.transform = 'scaleX(1)'
+    el.style.width = '20px'
+    el.style.left = el.classList.contains('tile-2') ? 'auto' : '0'
+    el.style.right = el.classList.contains('tile-2') ? '0' : 'auto'
+  })
+}
+
+const foldTiles = () => {
+  document.querySelectorAll('.tile').forEach(tile => 
+    (tile as HTMLElement).style.transform = 'scaleX(0)'
+  )
 }
 </script>
 
@@ -44,8 +44,8 @@ export default {
   font-weight: bold;
   font-size: 2.5rem;
   text-transform: lowercase;
-  margin-bottom: 0; /* Remove bottom margin */
-  line-height: 1; /* Adjust line height to remove extra space */
+  margin-bottom: 0;
+  line-height: 1;
 }
 
 .podclub-header a {

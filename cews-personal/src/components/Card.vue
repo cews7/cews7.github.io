@@ -1,28 +1,16 @@
 <template>
-  <div class="card" :style="{ borderColor: borderColor }">
+  <div class="card" :style="{ borderColor }">
     <img :src="image" :alt="description" class="card-image">
     <p class="card-description">{{ description }}</p>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Card',
-  props: {
-    image: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String,
-      required: true
-    },
-    borderColor: {
-      type: String,
-      required: true
-    }
-  }
-}
+<script setup lang="ts">
+defineProps<{
+  image: string
+  description: string
+  borderColor: string
+}>()
 </script>
 
 <style scoped>

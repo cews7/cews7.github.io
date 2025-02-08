@@ -2,7 +2,7 @@
   <div class="about-container">
     <div class="image-container">
       <transition name="fade" mode="out-in">
-        <img :src="currentImage || '/assets/profile-photo.jpeg'" alt="Profile photo" :key="currentImage" />
+        <img :src="currentImage" alt="Profile photo" :key="currentImage" />
       </transition>
     </div>
     <div class="text-container">
@@ -18,42 +18,37 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'AboutMe',
+<script setup lang="ts">
+import { ref, onBeforeUnmount } from 'vue'
 
-  data() {
-    return {
-      currentImage: '/assets/profile-photo.jpeg',
-      imageChangeTimeout: null,
-      images: {
-        backpacking: '/assets/backpacking-photo.jpeg',
-        skiing: '/assets/skiing-photo.jpg',
-        garden: '/assets/garden-photo.jpg',
-        pets: '/assets/pets-photo.jpeg'
-      }
-    }
-  },
+const defaultImage = '/assets/profile-photo.jpeg'
+const currentImage = ref(defaultImage)
+const imageChangeTimeout = ref<number | null>(null)
 
-  methods: {
-    changeImage(image) {
-      clearTimeout(this.imageChangeTimeout);
-      this.imageChangeTimeout = setTimeout(() => {
-        this.currentImage = this.images[image];
-      }, 500);
-    },
-    resetImage() {
-      clearTimeout(this.imageChangeTimeout);
-      this.imageChangeTimeout = setTimeout(() => {
-        this.currentImage = '/assets/profile-photo.jpeg';
-      }, 1000);
-    }
-  },
-
-  beforeUnmount() {
-    clearTimeout(this.imageChangeTimeout);
-  }
+const images = {
+  backpacking: '/assets/backpacking-photo.jpeg',
+  skiing: '/assets/skiing-photo.jpg',
+  garden: '/assets/garden-photo.jpg',
+  pets: '/assets/pets-photo.jpeg'
 }
+
+const changeImage = (image: keyof typeof images) => {
+  if (imageChangeTimeout.value) clearTimeout(imageChangeTimeout.value)
+  imageChangeTimeout.value = window.setTimeout(() => {
+    currentImage.value = images[image]
+  }, 500)
+}
+
+const resetImage = () => {
+  if (imageChangeTimeout.value) clearTimeout(imageChangeTimeout.value)
+  imageChangeTimeout.value = window.setTimeout(() => {
+    currentImage.value = defaultImage
+  }, 1000)
+}
+
+onBeforeUnmount(() => {
+  if (imageChangeTimeout.value) clearTimeout(imageChangeTimeout.value)
+})
 </script>
 
 <style scoped>

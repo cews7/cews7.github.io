@@ -14,25 +14,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Crownpeak',
-  methods: {
-    unfoldTiles() {
-      document.documentElement.style.setProperty('--tile-1-color', 'rgba(128, 0, 128, 0.5)');
-      document.documentElement.style.setProperty('--tile-2-color', 'rgba(64, 0, 164, 0.5)');
-      document.documentElement.style.setProperty('--tile-3-color', 'rgba(0, 0, 200, 0.5)');
-      document.querySelectorAll('.tile').forEach(tile => {
-        tile.style.transform = 'scaleX(1)';
-        tile.style.width = '20px';  // Adjust this value as needed
-        tile.style.left = tile.classList.contains('tile-2') ? 'auto' : '0';
-        tile.style.right = tile.classList.contains('tile-2') ? '0' : 'auto';
-      });
-    },
-    foldTiles() {
-      document.querySelectorAll('.tile').forEach(tile => tile.style.transform = 'scaleX(0)');
-    }
-  }
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const tiles = ref<HTMLElement[]>([])
+
+onMounted(() => {
+  tiles.value = Array.from(document.querySelectorAll('.tile'))
+})
+
+const unfoldTiles = () => {
+  document.documentElement.style.setProperty('--tile-1-color', 'rgba(128, 0, 128, 0.5)')
+  document.documentElement.style.setProperty('--tile-2-color', 'rgba(64, 0, 164, 0.5)')
+  document.documentElement.style.setProperty('--tile-3-color', 'rgba(0, 0, 200, 0.5)')
+  
+  tiles.value.forEach(tile => {
+    tile.style.transform = 'scaleX(1)'
+    tile.style.width = '20px'
+    tile.style.left = tile.classList.contains('tile-2') ? 'auto' : '0'
+    tile.style.right = tile.classList.contains('tile-2') ? '0' : 'auto'
+  })
+}
+
+const foldTiles = () => {
+  tiles.value.forEach(tile => 
+    tile.style.transform = 'scaleX(0)'
+  )
 }
 </script>
 
@@ -41,7 +48,7 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
-  color: #4e2ae8;;
+  color: #4e2ae8;
   border-radius: 4px;
   text-transform: lowercase;
   text-decoration: none;
