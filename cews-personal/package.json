@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "code-highlight": "link:@/code-highlight",
-    "gray-matter": "^4.0.3",
     "markdown-it": "^14.1.0",
     "marked": "^15.0.3",
     "pinia": "^2.2.4",
