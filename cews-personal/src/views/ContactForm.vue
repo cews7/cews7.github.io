@@ -1,103 +1,83 @@
 <template>
-  <div class="contact-form-container">
-    <div class="contact-form">
-      <h1>What can I build for you?</h1>
-      <form :action="`https://formspree.io/f/${formspreeFormId}`" method="POST">
-        <div class="form-group">
-          <input type="text" id="name" name="name" required placeholder="Name">
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" name="email" required placeholder="Email">
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" required placeholder="Message"></textarea>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-      <p>Or email me directly at <a href="mailto:cwahlgrensauro@gmail.com">cwahlgrensauro@gmail.com</a></p>
-    </div>
+  <div class="contact">
+    <h1 class="page-heading">Contact</h1>
+    <p class="page-intro">
+      Tell me what you're building. I read everything that comes through here.
+    </p>
+
+    <form class="form" :action="`https://formspree.io/f/${formspreeFormId}`" method="POST">
+      <div class="field">
+        <label class="eyebrow" for="name">Name</label>
+        <input id="name" type="text" name="name" required />
+      </div>
+
+      <div class="field">
+        <label class="eyebrow" for="email">Email</label>
+        <input id="email" type="email" name="email" required />
+      </div>
+
+      <div class="field">
+        <label class="eyebrow" for="message">Message</label>
+        <textarea id="message" name="message" rows="7" required></textarea>
+      </div>
+
+      <button class="submit" type="submit">Send message</button>
+    </form>
+
+    <hr class="rule" />
+
+    <p class="prose">
+      Or email directly:
+      <a href="mailto:cwahlgrensauro@gmail.com">cwahlgrensauro@gmail.com</a>
+    </p>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const formspreeFormId = import.meta.env.VITE_FORMSPREE_FORM_ID
 </script>
 
 <style scoped>
-.contact-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} 
+.page-heading { font-size: var(--step-3); margin-bottom: var(--gap-s); }
+.page-intro { color: var(--ink-muted); margin-bottom: var(--gap-l); }
 
-.contact-form {
+.form { max-width: var(--measure); }
+
+.field { margin-bottom: var(--gap-m); }
+
+.field label { margin-bottom: var(--gap-xs); }
+
+.field input,
+.field textarea {
   width: 100%;
-  max-width: 600px;
-  padding: 30px;
-  margin: 0 15px;
-  background-color: white;
+  font-family: var(--font-prose);
+  font-size: var(--step-0);
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule-strong);
+  padding: var(--gap-s);
+  transition: border-color 0.18s ease;
 }
 
-.contact-form h1 {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 90%;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid #007bff;
-  background-color: transparent;
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
   outline: none;
-  transition: border-color 0.3s;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-bottom-color: #0056b3;
-}
+.field textarea { resize: vertical; }
 
-.contact-form textarea {
-  height: 100px;
-  resize: vertical;
-}
-
-.contact-form button {
-  display: block;
-  width: auto;
-  min-width: 120px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  background-color: #00008B;
-  color: white;
-  border: none;
-  border-radius: 20px;
+.submit {
+  font-family: var(--font-meta);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: var(--gap-s) var(--gap-m);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
 }
 
-.contact-form button:hover {
-  background-color: #000066;
-}
-
-.contact-form p {
-  text-align: center;
-  margin-top: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .contact-form {
-    padding: 20px 15px;
-  }
-
-  .contact-form button {
-    width: 100%;
-  }
-}
+.submit:hover { background: var(--accent); border-color: var(--accent); }
 </style>
