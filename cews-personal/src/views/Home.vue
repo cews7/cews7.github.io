@@ -2,8 +2,8 @@
   <div class="home">
     <!-- The thesis. Draft copy — rewrite in your own words. -->
     <p class="home__thesis">
-      I build software and take positions on where things are going.
-      This is the record of both.
+      I build software. This is the record of what I've made,
+      what state it's in, and what I learned making it.
     </p>
 
     <section class="home__section" aria-labelledby="latest">
@@ -22,15 +22,17 @@
 <script setup>
 import { computed } from 'vue'
 import { work } from '../content/work.js'
-import { reading } from '../content/reading.js'
-import { positions } from '../content/positions.js'
+import { slugify } from '../content/slug.js'
 
-/** The front page of the record: the most recent entries across sections. */
-const latest = computed(() => [
-  ...work.slice(0, 2).map(w => ({ title: w.title, dates: w.dates, kind: 'work', to: '/work' })),
-  ...positions.slice(0, 1).map(p => ({ title: p.claim, dates: p.dates, kind: 'position', to: '/now' })),
-  ...reading.slice(0, 1).map(r => ({ title: r.title, dates: r.dates, kind: 'reading', to: '/reading' }))
-])
+/**
+ * The front page of the record. Each row links to its own anchor so /work
+ * opens on the entry that was clicked rather than at the top.
+ */
+const latest = computed(() =>
+  work.map(w => ({
+    title: w.title, dates: w.dates, kind: w.status, to: `/work#${slugify(w.title)}`
+  }))
+)
 </script>
 
 <style scoped>

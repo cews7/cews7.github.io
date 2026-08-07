@@ -1,5 +1,5 @@
 <template>
-  <article class="entry">
+  <article :id="id || undefined" class="entry">
     <div class="entry__rail">
       <span class="meta">{{ dates }}</span>
       <span v-if="status" class="meta" :class="statusClass">{{ status }}</span>
@@ -32,13 +32,15 @@ const props = defineProps({
   href:   { type: String, default: '' },
   role:   { type: String, default: '' },
   dates:  { type: String, required: true },
-  /** The register marks state. See work.js / reading.js for each section's set. */
+  /** The register marks state. See work.js for the set it uses. */
   status: { type: String, default: '' },
-  tags:   { type: Array, default: () => [] }
+  tags:   { type: Array, default: () => [] },
+  /** Anchor target, so the front page can link to this specific entry. */
+  id:     { type: String, default: '' }
 })
 
 /** Statuses that mean "ongoing" get the accent; everything else reads as past. */
-const LIVE = new Set(['active', 'reading'])
+const LIVE = new Set(['active'])
 const statusClass = computed(() => (LIVE.has(props.status) ? 'meta--live' : 'meta--past'))
 </script>
 
@@ -52,6 +54,13 @@ const statusClass = computed(() => (LIVE.has(props.status) ? 'meta--live' : 'met
 }
 
 .entry:first-child { border-top: 0; padding-top: var(--gap-s); }
+
+/* Arrived here from a front-page link: mark which entry was asked for.
+   The box-shadow extends the wash past the grid box without shifting layout. */
+.entry:target {
+  background: var(--accent-wash);
+  box-shadow: 0 0 0 var(--gap-s) var(--accent-wash);
+}
 
 /* The rail: dates and status pinned into the left margin, mono, stacked. */
 .entry__rail {

@@ -11,8 +11,6 @@
 <script setup>
 const sections = [
   { to: '/work',       label: 'work' },
-  { to: '/now',        label: 'now' },
-  { to: '/reading',    label: 'reading' },
   { to: '/about',      label: 'about' },
   { to: '/contact',    label: 'contact' }
 ]

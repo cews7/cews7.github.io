@@ -19,12 +19,6 @@
         </p>
 
         <p>
-          I read widely and take positions on where things are heading, then put
-          time and money behind them. The ones I hold right now are on the
-          <router-link to="/now">current focus</router-link> page.
-        </p>
-
-        <p>
           If you're building something, I'd like to hear about it.
           <router-link to="/contact">Get in touch</router-link>.
         </p>

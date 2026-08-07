@@ -8,6 +8,7 @@
     <Entry
       v-for="item in work"
       :key="item.title"
+      :id="slugify(item.title)"
       :title="item.title"
       :href="item.href"
       :role="item.role"
@@ -24,6 +25,7 @@
 <script setup>
 import Entry from '../components/Entry.vue'
 import { work } from '../content/work.js'
+import { slugify } from '../content/slug.js'
 </script>
 
 <style scoped>
