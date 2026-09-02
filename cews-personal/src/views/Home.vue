@@ -1,9 +1,7 @@
 <template>
   <div class="home">
-    <!-- The thesis. Draft copy — rewrite in your own words. -->
     <p class="home__thesis">
-      I build software. This is the record of what I've made,
-      what state it's in, and what I learned making it.
+      I decide what to build, then build it.
     </p>
 
     <section class="home__section" aria-labelledby="latest">

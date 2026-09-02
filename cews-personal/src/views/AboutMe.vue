@@ -3,7 +3,6 @@
     <h1 class="about__heading">About</h1>
 
     <div class="about__body">
-      <!-- Draft copy. Written from what you told me — edit it into your own voice. -->
         <p class="lede">
           I'm a software engineer. I'm most useful early, when a problem is still
           vague and someone has to decide what is actually worth building.
