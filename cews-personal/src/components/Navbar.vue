@@ -1,123 +1,49 @@
 <template>
-  <nav class="navbar" :class="{ 'navbar-bottom': isBottomNav }">
-    <ul>
-      <li class="navbar-item">
-        <router-link to="/about" exact-active-class="active">About Me</router-link>
-      </li>
-      <li class="navbar-item">
-        <router-link to="/jobs" exact-active-class="active">Employment</router-link>
-      </li>
-      <li class="navbar-item">
-        <router-link to="/projects" exact-active-class="active">Projects</router-link>
-      </li>
-      <li class="navbar-item">
-        <router-link to="/contact" exact-active-class="active">Contact</router-link>
+  <nav class="nav" aria-label="Sections">
+    <ul class="nav__list">
+      <li v-for="item in sections" :key="item.to">
+        <router-link :to="item.to" active-class="is-current">{{ item.label }}</router-link>
       </li>
     </ul>
   </nav>
 </template>
 
-<script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const isBottomNav = ref(false)
-
-const checkScreenSize = () => {
-  isBottomNav.value = window.innerWidth <= 1240
-}
-
-onMounted(() => {
-  checkScreenSize()
-  window.addEventListener('resize', checkScreenSize)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkScreenSize)
-})
+<script setup>
+const sections = [
+  { to: '/work',       label: 'work' },
+  { to: '/about',      label: 'about' },
+  { to: '/contact',    label: 'contact' }
+]
 </script>
 
 <style scoped>
-.navbar {
-  position: fixed;
-  left: calc(20px + 2%);
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 20px 0;
+.nav__list {
   display: flex;
-  flex-direction: column;
-}
-
-.navbar ul {
-  list-style-type: none;
-  padding: 0;
+  flex-wrap: wrap;
+  gap: var(--gap-s) var(--gap-m);
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-.navbar-item {
-  margin-bottom: 10px;
+.nav__list a {
+  font-family: var(--font-meta);
+  font-size: var(--step--1);
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
 }
 
-.navbar-item a {
-  text-decoration: none;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: block;
-  font-size: 16px;
+.nav__list a:hover { color: var(--ink); }
+
+/* Current section is marked in the register, not highlighted with a chip. */
+.nav__list a.is-current {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
 }
 
-.navbar-item a.active {
-  background-color: #000;
-  color: white;
-}
-
-.navbar-item a:hover:not(.active) {
-  background-color: #f5f5f5;
-}
-
-@media (max-width: 1240px) {
-  .navbar-bottom {
-    position: fixed;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: none;
-    padding: 10px 0;
-    background-color: #fff;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-
-  .navbar-bottom ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-
-  .navbar-bottom .navbar-item {
-    margin-bottom: 0;
-    flex: 1;
-    text-align: center;
-  }
-
-  .navbar-bottom .navbar-item a {
-    font-size: 14px;
-    padding: 10px 5px;
-    white-space: nowrap;
-    display: block;
-  }
-
-  .navbar-bottom .navbar-item:first-child a {
-    padding-left: 20px;
-  }
-
-  .navbar-bottom .navbar-item:last-child a {
-    padding-right: 20px;
-  }
+@media (max-width: 40rem) {
+  .nav__list { gap: var(--gap-xs) var(--gap-s); }
 }
 </style>

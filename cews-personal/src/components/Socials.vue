@@ -1,50 +1,41 @@
 <template>
   <div class="socials">
-    <a href="https://www.linkedin.com/in/charleswahlgrensauro/" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/In-Blue-21.png" alt="LinkedIn" class="social-icon linkedin-icon">
+    <a
+      href="https://www.linkedin.com/in/charleswahlgrensauro/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="/assets/In-Blue-21.png" alt="LinkedIn" class="social-icon social-icon--linkedin" />
     </a>
     <a href="https://github.com/cews7" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/github-mark.svg" alt="GitHub" class="social-icon github-icon">
+      <img src="/assets/github-mark.svg" alt="GitHub" class="social-icon" />
     </a>
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup></script>
 
 <style scoped>
 .socials {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--gap-m);
 }
+
+.socials a { border-bottom: 0; }
 
 .social-icon {
-  width: 24px;
-  height: 24px;
-  transition: opacity 0.3s ease, filter 0.3s ease;
-  filter: brightness(0); /* This makes the icons black */
+  width: 18px;
+  height: 18px;
+  /* Flatten both marks to ink so they read as one set, not two logos. */
+  filter: grayscale(1) brightness(0) opacity(0.55);
+  transition: filter 0.18s ease;
 }
 
-.social-icon:hover {
-  opacity: 0.7;
-  filter: brightness(0) invert(0.3); /* This makes the icons gray on hover */
+.socials a:hover .social-icon,
+.socials a:focus-visible .social-icon {
+  filter: grayscale(1) brightness(0) opacity(1);
 }
 
-.linkedin-icon {
-  width: 21px; /* Adjust if needed to match the original image size */
-}
-
-@media screen and (max-width: 768px) {
-  .social-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .linkedin-icon {
-    width: 18px;
-  }
-}
+.social-icon--linkedin { width: 16px; }
 </style>
